@@ -9,3 +9,23 @@
 const person = require('./person');//require function imports the mentioned package or modules into a variable.
 
 console.log(person.name);
+
+
+// ------------------------------------------------------------------------
+const EventEmitter = require('events');
+
+// Create an event emitter instance
+const eventEmitter = new EventEmitter();
+
+// Define an event handler
+const handleEvent = () => {
+    console.log('Event triggered!');
+};
+
+// Assign the handler to a specific event
+eventEmitter.on('myEvent', handleEvent);
+
+// Trigger the event
+eventEmitter.emit('myEvent');
+
+// So this is the basic example of a event-driven architecture.
