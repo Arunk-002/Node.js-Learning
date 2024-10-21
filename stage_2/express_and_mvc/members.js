@@ -23,4 +23,4 @@ const members=[{
     "password": "OXVWX9c6SHbOHTi"
 }]
 
-module.export = members;
+module.exports = members;
