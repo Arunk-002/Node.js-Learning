@@ -31,4 +31,21 @@ router.post('/',(req,res)=>{
     res.send(members)
 })
 
+// update a member
+router.put('/:name',(req,res)=>{
+    const newMember=req.body
+    let found= false;
+    members.forEach((member)=>{
+        if(member.name==newMember.name){
+            member.email=newMember.email
+            found=true
+            return
+        }
+    })
+    if (found) {
+        res.json({msg:`employee edited succesfully,${newMember.email}`})
+    }else{
+        res.status(400).json({msg:'employee not found'})
+    }
+})
 module.exports = router;

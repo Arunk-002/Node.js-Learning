@@ -1,6 +1,6 @@
 const express= require('express')
 const path = require('path')
-
+const exprshbs= require('express-handlebars')
 const logger= require('./middleware/logger')
 
 const app = express();
@@ -8,9 +8,16 @@ const port=process.env.port||8000
 // Intitialzed an middleware
 app.use(logger)
 
+app.engine('handlebars', exprshbs.engine()); 
+app.set('view engine', 'handlebars');
 //body parser middleware
 app.use(express.json())
 app.use(express.urlencoded({extended:false})) 
+
+//Home page route
+app.get('/',(req,res)=>{
+    res.render('home')
+})
 
 app.use('/api/members',require('./routes/api/members'))
 // app.get('/',(req,res)=>{//this recieves a get request and gives necessary responses.
