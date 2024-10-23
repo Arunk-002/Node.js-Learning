@@ -5,7 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server_handling/index",
-    "dev": "nodemon stage_2/express_and_mvc/index.js"
+    "dev": "nodemon stage_2/express_and_mvc/index.js",
+    "dbtry":"nodemon stage_2/db_connection/index.js",
+    "rest":"nodemon stage_2/rest_api/index.js"
   },
   "author": "arun",
   "license": "ISC",
@@ -13,6 +15,7 @@
   "dependencies": {
     "express": "^4.21.1",
     "express-handlebars": "^8.0.1",
+    "mongoose": "^8.7.2",
     "url": "^0.11.4",
     "uuid": "^10.0.0"
   },
